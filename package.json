@@ -1,8 +1,9 @@
 {
-  "name": "ocDispensary",
+  "name": "oc-Dispensary",
   "version": "0.0.1",
   "description": "NYC Legal &amp; Licensed Recreational Cannabis Dispensary in Brooklyn, NY",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev-server": "vite --open",
     "dev": "npm run dev-server",
