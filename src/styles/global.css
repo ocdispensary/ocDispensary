@@ -270,10 +270,6 @@ html {
 .tm-special-carousel{
   width:95%;  ;
 }
-/* The product image */
-.tm-special-item img{
-}
-
 /* Optional: ensure every slide centres its content (safety net) */
 .swiper-slide{
   display:flex;

@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <title>ocDispensary</title>
 
-  <base href="/" />
+  <base href="/menumenu" />
 
   <!-- This meta viewport ensures the webpage's dimensions change according to the device it's on. This is called Responsive Web Design.-->
   <meta name="viewport"
@@ -45,81 +45,32 @@
 
 <body>
   <!-- Our app-index web component. This component is defined in src/pages/app-index.ts-->
-  <app-index></app-index>
-		<div id="navbar">
-			<a class="active" href="https://ocdispensary.github.io/oc-dispensary/index.html">
-				<img src="https://iili.io/3GNEMBt.png" style="height: 50px">
-			</a>
-		</div>
-		<div class="tm-container">
-			<div class="tm-row">
-				<div class="tm-site-header">
-					<img src="https://iili.io/3GNEMBt.png" style="height: 165px">
-				</div>
-				<div class="tm-right">
-					<main class="tm-main">
-						<section id="shop" class="tm-page-content">
-							<h2 class="tm-text-primary tm-mb-20">Shop by Category</h2>
-							<div id="categories-grid"></div>
-						</section>
-					</main>
-				</div>
-				<div class="tm-left">
-					<div class="tm-left-inner"></div>
-				</div>
-				<h2 class="tm-text-primary">Top Sellers </h2>
-				<section id="featured" class="tm-page-content">
-					<div class="swiper tm-special-carousel">
-						<div class="swiper-wrapper" id="featured-wrapper"></div>
-						<div class="swiper-button-prev"></div>
-						<div class="swiper-button-next"></div>
-						<div class="swiper-pagination"></div>
-					</div>
-				</section>
+  
+			<div style="transform: translateY(84px);" id="navbar">
+				<a href="https://ocdispensary.github.io/oc-dispensary/index.html">
+					<img src="https://iili.io/3GNEMBt.png" style="height: 50px">
+				</a>
 			</div>
-		</div>
-		</main>
-		<div class="navbar-btm">
-			<button onclick="history.back()">
-				<i class="fa-solid fa-circle-left navbar-btm-icon"></i>
-			</button>
-			<button onclick="history.forward()">
-				<i class="fa-solid fa-circle-right navbar-btm-icon"></i>
-			</button></div>
-      <footer class="tm-site-footer">
-        <p class="tm-footer-header">OC Dispensary | Brooklyn NY</p>
-        <p class="tm-footer-text">All rights reserved Copyright 2025
-        </p>
-      </footer>
-		<script>
-			window.onscroll = function() {
-				scrollFunction()
-			};
-
-			function scrollFunction() {
-				if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-					document.getElementById("navbar").style.top = "0";
-				} else {
-					document.getElementById("navbar").style.top = "-84px";
-				}
-			}
-		</script>
-		<script defer src="age‑gate.js"></script>
-		<script defer src="swiper-bundle.min.js"></script>
-		<script src="jquery-3.4.1.min.js"></script>
-		<script src="top_sellers.js" defer></script>
-		<script src="categories.js" defer></script>
-		<script src="js/internal-links.js" defer></script>
-		<script src="service-worker.js" defer></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.onload = () => {
-        navigator.serviceWorker.register(
-          '/sw.js'
-        );
-      }
-    }
-  </script>
+			<div style="margin-top: 75px;">
+				<script async="" id="dutchie--embed__script" src="https://dutchie.com/api/v2/embedded-menu/64c010d60403d4000956b399.js"></script>
+			</div>
+			<footer class="tm-site-footer">
+				<p class="tm-footer-header">OC Dispensary | Brooklyn NY</p>
+				<p class="tm-footer-text">All rights reserved Copyright 2025 </p>
+			</footer>
+			<div class="navbar-btm">
+				<button style="background-color: transparent; box-shadow: none;" onclick="history.back()">
+					<i class="fa-solid fa-circle-left navbar-btm-icon"></i>
+				</button>
+				<button style="background-color: transparent; box-shadow: none;" onclick="history.forward()">
+					<i class="fa-solid fa-circle-right navbar-btm-icon"></i>
+				</button>
+			</div>
+			<script defer src="swiper-bundle.min.js"></script>
+			<script src="jquery-3.4.1.min.js"></script>
+			<script src="top_sellers.js" defer></script>
+			<script src="categories.js" defer></script>
+			<script src="js/internal-links.js" defer></script>
 </body>
 
 </html>
