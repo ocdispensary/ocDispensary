@@ -140,13 +140,6 @@
     "price": "$49.00"
   },
   {
-    "name": "Banana Dosi Pre-Roll 7-Pack | 3.5g",
-    "img": "https://dutchie-images.s3.us-west-2.amazonaws.com/c894cc3d405b45993251f55930f3dcb3?auto=format%2Ccompress&cs=srgb&fit=max&fill=solid&fillColor=%23fff&ixlib=react-9.8.1&h=188&w=188",
-    "brand": "Hudson Cannabis",
-    "link": "https://ocdispensary.github.io/oc-dispensary/menu?dtche%5Bproduct%5D=banana-dosi-pre-roll-7-pack-3-5g-70461",
-    "price": "$42.00"
-  },
-  {
     "name": "Ayrloom | Mood Energy | AIO | 1g | THC : THCV : CBG",
     "img": "https://images.dutchie.com/e7c5dfcad6c2de84f434f83279704083?auto=format%2Ccompress&cs=srgb&fit=max&fill=solid&fillColor=%23fff&ixlib=react-9.8.1&h=188&w=188",
     "brand": "ayrloom",
@@ -173,5 +166,12 @@
     "brand": "Holiday",
     "link": "https://ocdispensary.github.io/oc-dispensary/menu?dtche%5Bproduct%5D=vape-aio-holiday-golden-hour",
     "price": "$65.40"
+  },
+  {
+    "name": "Cherry Bomb - Live Resin Vape AIO - Indica",
+    "img": "https://images.dutchie.com/87f587d249989ff71a90237ed018dde7?auto=format%2Ccompress&cs=srgb&fit=max&fill=solid&fillColor=%23fff&ixlib=react-9.8.1&h=188&w=188",
+    "brand": "To The Moon",
+    "link": "https://ocdispensary.github.io/oc-dispensary/menu?dtche%5Bproduct%5D=cherry-bomb-live-resin-vape-aio-indica-40755",
+    "price": "$64.00"
   }
 ]
