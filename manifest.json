@@ -1,6 +1,6 @@
 {
   "id": "v1032",
-  "scope": "/oc-dispensary/",
+  "scope": "/ocDispensary/",
   "name": "OC Dispensary App",
   "display": "standalone",
   "start_url": "https://ocdispensary.github.io/oc-dispensary/index.html",
