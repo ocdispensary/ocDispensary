@@ -14,7 +14,7 @@
     "start-remote": "vite --host",
     "scrape": "node scraper.js"
   },
-  "author": "",
+  "author": "Citron",
   "license": "ISC",
   "dependencies": {
     "@shoelace-style/shoelace": "^2.18.0",
