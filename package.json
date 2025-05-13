@@ -1,47 +1,26 @@
 {
-  "name": "oc-Dispensary",
-  "version": "0.0.1",
-  "description": "NYC Legal &amp; Licensed Recreational Cannabis Dispensary in Brooklyn, NY",
-  "main": "index.js",
+  "name": "dutchie-top-sellers-scraper",
+  "version": "1.2.0",
   "type": "module",
+
   "scripts": {
-    "dev-server": "vite --open",
-    "dev": "npm run dev-server",
-    "dev-task": "vite",
-    "deploy": "npx @azure/static-web-apps-cli login --no-use-keychain && npx @azure/static-web-apps-cli deploy",
-    "build": "tsc && vite build",
-    "start": "npm run dev",
-    "start-remote": "vite --host",
-    "scrape": "node scraper.js"
+    "start": "node scraper.js",
+    "categories": "node categories_scraper.js",
+    "build:sw": "workbox generateSW workbox-config.cjs",  
+    "build": "npm run build:sw",                          
+    "serve": "npx serve source -l 3000",
+    "dev": "npx live-server source --port=3000 --quiet",                
+    "deploy": "npm run build:sw && git add sw.js workbox-config.js && git commit -m \"build PWA\" && git push"
   },
-  "author": "Citron",
-  "license": "ISC",
+
   "dependencies": {
-    "@shoelace-style/shoelace": "^2.18.0",
-    "@thepassle/app-tools": "^0.9.12",
-    "lit": "^3.2.1",
-    "puppeteer": "^24.8.2",
+    "puppeteer": "^22.7.0",
     "puppeteer-extra": "^3.3.6",
-    "puppeteer-extra-plugin-adblocker": "^2.13.6",
-    "puppeteer-extra-plugin-stealth": "^2.11.2",
-    "urlpattern-polyfill": "^10.0.0",
-    "workbox-build": "^7.3.0",
-    "workbox-core": "^7.3.0",
-    "workbox-precaching": "^7.3.0"
+    "puppeteer-extra-plugin-stealth": "^2.11.1"
   },
+
   "devDependencies": {
-    "typescript": "^5.6.3",
-    "vite": "^5.4.11",
-    "vite-plugin-pwa": "^0.20.5"
-  },
-  "prettier": {
-    "tabWidth": 2,
-    "useTabs": false,
-    "semi": true,
-    "singleQuote": true,
-    "quoteProps": "consistent",
-    "trailingComma": "es5",
-    "endOfLine": "crlf",
-    "bracketSpacing": true
+    "workbox-cli": "^7.0.0",   
+    "serve": "*"         
   }
 }
