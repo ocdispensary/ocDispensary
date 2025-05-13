@@ -1,52 +1,40 @@
-name: Build & Deploy + Scrape Dutchie Data
+name: Deploy PWA Starter to GitHub Pages
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
-  schedule:
-    - cron: "0 6 * * *"          # every day @ 06 UTC
 
 jobs:
-  # ---------- Build & Deploy PWA ---------- #
   build:
-    if: github.event_name != 'schedule'  # skip build on cron-only runs
     runs-on: ubuntu-latest
 
     steps:
-      # -- checkout code --
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
-      # -- Node setup --
-      - uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v1
         with:
-          node-version: "20"
+          node-version: '16.13'
 
-      # -- install deps --
-      - name: Install dependencies
-        run: npm ci
+      - name: Install Dependencies
+        run: npm install
 
-      # -- rewrite paths inside the static files --
       - name: Rewrite Manifest Path in Index
-        run: sed -i 's@/manifest.json@${{ github.event.ocDispensary }}/manifest.json@g' ./index.html && cat ./index.html
+        run: sed -i 's@/manifest.json@${{ github.event.repository.name }}/manifest.json@g' ./index.html && cat index.html
 
       - name: Rewrite Service Worker Path in Index
-        run: sed -i 's@/sw.js@${{ github.event.ocDispensary }}/sw.js@g' ./index.html && cat ./index.html
+        run: sed -i 's@/sw.js@${{ github.event.repository.name }}/sw.js@g' ./index.html && cat ./index.html
 
       - name: Replace Paths in Manifest
-        run: sed -i 's@"/"@"/${{ github.event.ocDispensary }}/"@g' ./public/manifest.json && cat ./public/manifest.json
+        run: sed -i 's@"/"@"/${{ github.event.repository.name }}/"@g' ./public/manifest.json && cat ./public/manifest.json
 
-      # -- build --
-      - name: Vite build
-        run: npm run build -- --base=/${{ github.event.ocDispensary }}/
+      - name: Vite Build
+        run: npm run build -- --base=/${{ github.event.repository.name }}/
 
-      # -- SPA 404 fallback --
-      - name: Redirect 404 to index.html
+      - name: Redirect 404 to Index for SPA
         run: cp dist/index.html dist/404.html
 
-      # -- publish artifact --
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v2
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v1
         with:
           path: dist/
 
@@ -59,42 +47,6 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v2
-
-  # ---------- Scrape Dutchie "Top Sellers" ---------- #
-  scrape:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run top_sellers scraper
-        env:
-          PUPPETEER_DISABLE_TEMP_DIR_CLEANUP: "1"
-        run: npm run scrape
-
-      - name: Commit updated JSON
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore: update scraped JSON"
-          add_options: "-u"
-          file_pattern: "*.json"
-          skip_dirty_check: true
-
-      - name: Upload JSON artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: dutchie-json
-          path: "*.json"
+        uses: actions/deploy-pages@v1
