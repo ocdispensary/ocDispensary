@@ -1,7 +1,7 @@
 {
   "name": "ocDispensary",
   "version": "0.0.1",
-  "description": "A starter kit for building PWAs!",
+  "description": "NYC Legal &amp; Licensed Recreational Cannabis Dispensary in Brooklyn, NY",
   "main": "index.js",
   "scripts": {
     "dev-server": "vite --open",
