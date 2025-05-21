@@ -5,25 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "pwa-msedge",
+            "command": "npm run build; npm start",
+            "name": "Run npm start",
             "request": "launch",
-            "name": "Run PWA",
-            "webRoot": "${workspaceFolder}/",
-            "runtimeArgs": [
-                "--app=http://localhost:5173"
-            ],
-            "sourceMapPathOverrides": {
-                "../../src": "${workspaceFolder}/src",
-                "../../src/*": "${workspaceFolder}/src/*"
-            },
-            "preLaunchTask": "npm run dev-task",
-            "postDebugTask": "postdebugKill"
+            "type": "node-terminal"
         },
         {
-            "name": "Launch Microsoft Edge and open the Edge DevTools",
+            "type": "chrome",
             "request": "launch",
-            "type": "vscode-edge-devtools.debug",
-            "url": "" // Provide your project's url to finish configuring
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8081",
+            "webRoot": "${workspaceFolder}"
         }
     ]
 }
