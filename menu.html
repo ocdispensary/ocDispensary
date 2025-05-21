@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>menu</title>
+
+  <base href="/ocDispensary/" />
+
+  <!-- This meta viewport ensures the webpage's dimensions change according to the device it's on. This is called Responsive Web Design.-->
+  <meta name="viewport"
+    content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <meta name="description" content="This is a ocDispensary app" />
+
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#181818" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f3f3f3" />
+
+  <!-- These meta tags are Apple-specific, and set the web application to run in full-screen mode with a black status bar. Learn more at https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="ocDispensary" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+  <!-- This tag is used by the ocDispensary CLI to identify template projects. Don't remove if you are using the CLI. -->
+  <meta name="pwa-starter-template-identity" content="pwa-starter"/>
+
+  <!-- Imports an icon to represent the document. -->
+  <link rel="icon" href="/assets/icons/icon_24.png" type="image/png" />
+
+  <!-- Imports the manifest to represent the web application. A web app must have a manifest to be a PWA. -->
+  <link rel="manifest" href="manifest.json" />
+
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
+		<link rel="stylesheet" href="swiper.css">
+		<link rel="stylesheet" href="ocDispensary/src/styles/global.css" />
+		<link rel="stylesheet" href="fontawesome/css/all.min.css">
+
+  <script type="module">
+    import { setBasePath } from '@shoelace-style/shoelace/dist/utilities/base-path.js';
+    setBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/');
+  </script>
+
+  <script type="module" src="/src/app-index.ts"></script>
+</head>
+
+<body>
+  <!-- Our app-index web component. This component is defined in src/pages/app-index.ts-->
+  
+			<div style="transform: translateY(84px);" id="navbar">
+				<a href="https://ocdispensary.github.io/oc-dispensary/index.html">
+					<img src="https://iili.io/3GNEMBt.png" style="height: 50px">
+				</a>
+			</div>
+			<div style="margin-top: 75px;">
+				<script async="" id="dutchie--embed__script" src="https://dutchie.com/api/v2/embedded-menu/64c010d60403d4000956b399.js"></script>
+			</div>
+			<footer class="tm-site-footer">
+				<p class="tm-footer-header">OC Dispensary | Brooklyn NY</p>
+				<p class="tm-footer-text">All rights reserved Copyright 2025 </p>
+			</footer>
+			<div class="navbar-btm">
+				<button style="background-color: transparent; box-shadow: none;" onclick="history.back()">
+					<i class="fa-solid fa-circle-left navbar-btm-icon"></i>
+				</button>
+				<button style="background-color: transparent; box-shadow: none;" onclick="history.forward()">
+					<i class="fa-solid fa-circle-right navbar-btm-icon"></i>
+				</button>
+			</div>
+			<script defer src="swiper-bundle.min.js"></script>
+			<script src="jquery-3.4.1.min.js"></script>
+			<script src="top_sellers.js" defer></script>
+			<script src="categories.js" defer></script>
+			<script src="js/internal-links.js" defer></script>
+</body>
+
+</html>

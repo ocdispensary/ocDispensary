@@ -1,17 +1,121 @@
 {
-  "short_name": "Aardvark",
-  "name": "Aardvark: the app for aardvarks (add to homescreen test page)",
+  "id": "v1032",
+  "scope": "/ocDispensary/",
+  "name": "OC Dispensary App",
   "display": "standalone",
-  "id": "/?source=pwa",
-  "start_url": "/?source=pwa",
+  "start_url": "https://ocdispensary.github.io/oc-dispensary/index.html",
+  "short_name": "starter",
+  "theme_color": "#E1477E",
+  "description": "NYC Legal &amp; Licensed Recreational Cannabis Dispensary in Brooklyn, NY",
+  "orientation": "portrait",
+  "background_color": "#E1477E",
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "display_override": ["window-controls-overlay"],
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
   "icons": [
-      {
-          "src": "apple-touch-icon.png",
-          "sizes": "any",
-          "type": "image/png",
-          "purpose": "any"
-      }
+    {
+      "src": "assets/icons/icon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "images/screenshots/Screenshot_main.jpg",
+      "sizes": "1617x1012",
+      "type": "image/jpg"
+    },
+    {
+      "src": "images/screenshots/Screenshot_store.jpg",
+      "sizes": "1617x1012",
+      "type": "image/jpg"
+    }
+  ],
+  "features": [
+    "Cross Platform",
+    "fast",
+    "simple"
+  ],
+  "categories": [
+    "social"
+  ],
+  "shortcuts": [
+    {
+      "name": "Open Menu",
+      "short_name": "menu",
+      "description": "Open the menu page",
+      "url": "/menu",
+      "icons": [{ "src": "assets/icons/192x192.png", "sizes": "192x192" }]
+    }
+  ],
+  "widgets": [
+    {
+      "name": "Starter Widget",
+      "tag": "starterWidget",
+      "ms_ac_template": "widget/ac.json",
+      "data": "widget/data.json",
+      "description": "A simple widget example from pwa-starter.",
+      "screenshots": [
+    {
+      "src": "assets/screenshots/Screenshot_main.jpg",
+      "sizes": "1617x1012",
+      "type": "image/jpg"
+    },
+    {
+      "src": "assets/screenshots/Screenshot_store.jpg",
+      "sizes": "1617x1012",
+      "type": "image/jpg"
+    }
+      ],
+      "icons": [
+        {
+          "src": "assets/icons/icon-48x48.png",
+          "sizes": "48x48"
+        }
+      ]
+    }
   ]
 }
-
-  

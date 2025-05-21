@@ -1,0 +1,50 @@
+name: Scrape Dutchie Data
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * *"          # every day @ 06 UTC
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    # allows the workflow to push back into the repos
+    permissions:
+      contents: write
+
+    steps:
+      # ——— checkout code ————————————————————————————————
+      - uses: actions/checkout@v4
+
+      # ——— Node setup ————————————————————————————————
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # ——— install deps ————————————————————————————————
+      - name: Install dependencies
+        run: npm ci
+
+      # ——— scrape Top Sellers ————————————————————————————
+      - name: Run top_sellers scraper
+        env:
+          PUPPETEER_DISABLE_TEMP_DIR_CLEANUP: "1"
+        run: npm start
+
+      # ——— commit updated JSON (tracked or new) ——————————
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update scraped JSON"
+          add_options: "-u"          # stage modified tracked files
+          file_pattern: "*.json"     # limit commit to JSON outputs
+          skip_dirty_check: true     # exit 0 if nothing changed
+
+      # ——— upload the JSON as workflow artifacts ——————————
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dutchie-json
+          path: "*.json"

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # .gitignore
 *.log
 .DS_Store
 node_modules/
+=======
+node_modules
+>>>>>>> parent of 73180bda (1)
